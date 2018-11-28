@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/Users/ssm2349/Documents/StudioZ/Show-Booking/src/main/scala/com.tabish/db/AuditoriumDAO.scala:3:8: object Auditorium is not a member of package com.tabish.models[0m
+[0m[[0m[31merror[0m] [0m[0mimport com.tabish.models.Auditorium[0m
+[0m[[0m[31merror[0m] [0m[0m       ^[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/ssm2349/Documents/StudioZ/Show-Booking/src/main/scala/com.tabish/db/AuditoriumDAO.scala:7:34: not found: type Auditorium[0m
+[0m[[0m[31merror[0m] [0m[0m  def listAllAuditoriums(): List[Auditorium] = {[0m
+[0m[[0m[31merror[0m] [0m[0m                                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m

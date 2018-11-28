@@ -1,0 +1,7 @@
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ssm2349/Documents/StudioZ/Show-Booking/src/test/scala/com.tabish/example/AkkaQuickstartSpec.scala:43:14: patterns after a variable pattern cannot match (SLS 8.1.1)[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case s2 => println("Same")[0m
+[0m[[0m[33mwarn[0m] [0m[0m             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/ssm2349/Documents/StudioZ/Show-Booking/src/test/scala/com.tabish/example/AkkaQuickstartSpec.scala:44:26: unreachable code due to variable pattern 's2' on line 43[0m
+[0m[[0m[33mwarn[0m] [0m[0m        case _ => println("Diff")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
