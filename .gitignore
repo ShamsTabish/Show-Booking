@@ -1,0 +1,8 @@
+target/
+.idea/workspace.xml
+.idea/vcs.xml
+.idea/libraries
+.DS_Store
+sbt-dist
+sbt-dist/*
+target
