@@ -21,8 +21,8 @@ private class BookingActor extends Actor {
     val bookingService = new BookingService(bookRequest.outputFormatter, taxes, calculator)
     bookingService.bookTickets(bookRequest.auditorium, bookRequest.seats) match {
       case Right(bill) => bookRequest.notifyStatusFunction(bill)
-      case Left(unavailableSetas) =>
-        bookRequest.notifyStatusFunction(s"${unavailableSetas.map(_.id).mkString(", ")} Not available Please select different seats.!")
+      case Left(unavailableSeats) =>
+        bookRequest.notifyStatusFunction(s"${unavailableSeats.map(_.id).mkString(", ")} Not available Please select different seats.!")
     }
   }
 }

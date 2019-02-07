@@ -4,7 +4,7 @@ import akka.actor.{ActorRef, ActorSystem}
 import com.tabish.actors.{BookRequest, BookingActor}
 import com.tabish.db.{AuditoriumDAO, SeatBookingDAO}
 import com.tabish.models.{Auditorium, Seat}
-import com.tabish.services.TextFormatter
+import com.tabish.services.{RevenueCalculatorService, TextFormatter}
 
 import scala.util.{Failure, Try}
 
@@ -12,7 +12,6 @@ object UserInterface extends App {
   val system: ActorSystem = ActorSystem("ShowBookingActorSystem")
 
   val seatBookingActor: ActorRef = system.actorOf(BookingActor.props, "TicketBookingActor")
-
 
   presentActions
 
@@ -27,7 +26,9 @@ object UserInterface extends App {
           menu.printSeatStatusForAllAuditorium()
         case 2 =>
           menu.bookTicketsAudiMenu(seatBookingActor: ActorRef)
-        case 3 => sys.exit()
+        case 3 =>
+          menu.displayRevenue
+        case 4 => sys.exit()
         case _ => println("Invalid Input try again")
       }
     }
@@ -47,9 +48,18 @@ object UserInterface extends App {
            |Menu:
            |1. Show Seats
            |2. Book Ticket
-           |3. Exit
+           |3. Display Revenue.
+           |4. Exit
         """.stripMargin
       println(mainMenu)
+    }
+
+    def displayRevenue={
+      val bookedSeats= SeatBookingDAO.getAllBookings()
+      val revenue= new RevenueCalculatorService().calculateEarnings(bookedSeats)
+      val textFormatter=new TextFormatter()
+
+      println(textFormatter.formatRevenue(revenue))
     }
 
     def bookTicketsAudiMenu(seatBookingActor: ActorRef) = {

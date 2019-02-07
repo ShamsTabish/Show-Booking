@@ -4,7 +4,7 @@
 		module="show-booking$sources"
 		revision="1.0"
 		status="integration"
-		publication="20181128192018"
+		publication="20181220135645"
 	/>
 	<configurations>
 		<conf name="compile" visibility="public" description=""/>
